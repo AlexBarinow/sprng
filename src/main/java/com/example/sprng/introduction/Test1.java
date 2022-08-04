@@ -1,4 +1,4 @@
-package com.example.sprng;
+package com.example.sprng.introduction;
 
 public class Test1 {
     public static void main(String[] args) {

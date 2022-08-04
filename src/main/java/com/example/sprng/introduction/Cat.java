@@ -1,8 +1,5 @@
-package com.example.sprng;
+package com.example.sprng.introduction;
 
-
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

@@ -1,6 +1,5 @@
-package com.example.sprng;
+package com.example.sprng.introduction;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 

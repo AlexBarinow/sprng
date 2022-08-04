@@ -9,7 +9,7 @@
 
 
     <bean id="myPet"
-          class="com.example.sprng.Dog"
+          class="com.example.sprng.introduction.Dog"
           init-method="init"
           destroy-method="destroy"
     scope="singleton">

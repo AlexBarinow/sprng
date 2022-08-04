@@ -1,4 +1,4 @@
-package com.example.sprng;
+package com.example.sprng.introduction;
 
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
