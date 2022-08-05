@@ -1,4 +1,4 @@
-package com.example.sprng.aop.aspects;
+package com.example.sprng.aop;
 
 import com.example.sprng.aop.MyConfig;
 import com.example.sprng.aop.UniLibrary;

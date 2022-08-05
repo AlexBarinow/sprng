@@ -1,16 +1,16 @@
 package com.example.sprng.aop.aspects;
 
-import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class LoggingAndSecurityAspect {
+@Order(1)
+public class LoggingAspect {
 
-   private int i = 0;
+    private int i = 0;
 
 
     /*
@@ -40,35 +40,17 @@ public class LoggingAndSecurityAspect {
 //            System.out.println("Check the right to receive book or magazine");
 //        }
 
-    @Pointcut("execution(* com.example.sprng.aop.UniLibrary.get*(..))")
-    private void onGetFromUnilibrary() {
+
+    @Before("com.example.sprng.aop.aspects.MyPointCuts.onReturnToUnilibrary()")
+    public void afterGetLoggingAdvice() {
+        System.out.println("beforeGetLoggingAdvice: writing Log #2");
     }
 
-    @Pointcut("execution(* com.example.sprng.aop.UniLibrary.return*(..))")
-    private void onReturnToUnilibrary() {
-    }
-
-    @Pointcut("onReturnToUnilibrary() || onGetFromUnilibrary()")
-    private void onGetOrReturn() {
-    }
-
-//    @Before("onGetFromUnilibrary()")
-//    public void beforeGetLoggingAdvice() {
-//        System.out.println("beforeGetloggingAdvice: writing Log #1");
-//    }
-//
-//    @Before("onReturnToUnilibrary()")
-//    public void afterGetLoggingAdvice() {
-//        System.out.println("beforeGetloggingAdvice: writing Log #2");
-//    }
-
-    @Before("onGetOrReturn()")
+    @Before("com.example.sprng.aop.aspects.MyPointCuts.exceptReturnMagazine()")
     public void BeforeGetOrReturn() {
-        i ++;
-        System.out.println("onGetOrReturn: writing Log " + i);
+        i++;
+        System.out.println("BeforeGetOrReturn: writing Log " + i);
     }
-
-
 
 
 }
