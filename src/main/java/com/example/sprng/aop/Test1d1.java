@@ -11,11 +11,12 @@ public class Test1d1 {
 
 
         UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
-        uniLibrary.getBook();
-        uniLibrary.returnBook();
-
-        uniLibrary.getMagazine();
-        uniLibrary.returnMagazine();
+//        uniLibrary.getBook();
+        uniLibrary.addBook("ALex", new Book());
+//        uniLibrary.returnBook();
+//
+//        uniLibrary.getMagazine();
+//        uniLibrary.returnMagazine();
 
         context.close();
     }

@@ -10,6 +10,26 @@ public class Book {
     @Value("Tom&Jerry")
     private String name;
 
+    @Value("Paul McCartney")
+    private String Author;
+
+
+    @Value("1866")
+    private int YearOfRelease;
+
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAuthor() {
+        return Author;
+    }
+
+    public int getYearOfRelease() {
+        return YearOfRelease;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

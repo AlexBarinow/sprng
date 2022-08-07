@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class ExceptionHandlingAspect {
 
     @Before("com.example.sprng.aop.aspects.MyPointCuts.onGetFromUnilibrary()")
-    public void beforeGetExceptionAdvice() {
+    public void beforeAddExceptionAdvice() {
         System.out.println("!!! beforeGetExceptionAdvice: We've caught an exception!!!");
     }
 }

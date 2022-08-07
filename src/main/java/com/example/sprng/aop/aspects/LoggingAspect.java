@@ -1,7 +1,9 @@
 package com.example.sprng.aop.aspects;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -42,12 +44,31 @@ public class LoggingAspect {
 
 
     @Before("com.example.sprng.aop.aspects.MyPointCuts.onReturnToUnilibrary()")
-    public void afterGetLoggingAdvice() {
-        System.out.println("beforeGetLoggingAdvice: writing Log #2");
+    public void afterAddLoggingAdvice() {
+        System.out.println("beforeGetLoggingAdvice: writing Log ");
+    }
+
+
+    @Before("com.example.sprng.aop.aspects.MyPointCuts.onAdd()")
+    public void beforeAddBookAdvice(JoinPoint joinPoint) {
+        System.out.println("beforeAdBookAdvice: We have just added a book");
+
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+        System.out.println("methodSignature = "+ methodSignature);
+        System.out.println("methodSignature = "+ methodSignature.getMethod());
+        System.out.println("methodSignature = "+ methodSignature.getReturnType());
+        System.out.println("methodSignature = "+ methodSignature.getName());
     }
 
     @Before("com.example.sprng.aop.aspects.MyPointCuts.exceptReturnMagazine()")
-    public void BeforeGetOrReturn() {
+    public void BeforeGetOrReturn(JoinPoint joinPoint) {
+
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+        Object[] arguments = joinPoint.getArgs();
+
+        for(Object object : arguments)
+            System.out.println(object.toString());
+
         i++;
         System.out.println("BeforeGetOrReturn: writing Log " + i);
     }

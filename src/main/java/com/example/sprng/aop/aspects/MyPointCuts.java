@@ -1,6 +1,7 @@
 package com.example.sprng.aop.aspects;
 
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Pointcut;
 
 
@@ -8,6 +9,11 @@ public class MyPointCuts {
 
     @Pointcut("execution(* get*(..))")
     public void onGet() {
+    }
+
+
+    @Pointcut("execution(* add*(..))")
+    public void onAdd() {
     }
 
     @Pointcut("execution(* com.example.sprng.aop.UniLibrary.get*(..))")

@@ -14,6 +14,6 @@ public class SecurityAspect {
 
     @Before("com.example.sprng.aop.aspects.MyPointCuts.onGetFromUnilibrary()")
     public void beforeSecurityGetAdvice() {
-        System.out.println("beforeSecurityGetAdvice: writing Log #1");
+        System.out.println("beforeSecurityGetAdvice: writing Log");
     }
 }
