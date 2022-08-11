@@ -24,7 +24,7 @@ public class UniLibrary extends AbstractLibrary {
 
     public String returnBook() {
         System.out.println("We return a book");
-        //makeLine();
+        int a = 10/0;
         return "We return a book: Proud and prejudice";
     }
 

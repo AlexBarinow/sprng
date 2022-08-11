@@ -9,7 +9,8 @@ public class Test3 {
 
 
         UniLibrary library = context.getBean("uniLibrary", UniLibrary.class);
-        String bookName = library.returnBook();
+
+            String bookName = library.returnBook();
 
         System.out.println("Returned a book  " +
                 bookName);
