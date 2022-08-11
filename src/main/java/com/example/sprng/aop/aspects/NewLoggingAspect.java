@@ -22,7 +22,9 @@ public class NewLoggingAspect {
         } catch (Exception e) {
             System.out.println("The fall of the upper method ->" + "\"" + methodSignature.getMethod() + "\"" + " caused an exception " + "\"" + e.getMessage() + "\"");
 
-            targetMethodResult = "The art of the war";
+            //targetMethodResult = "The art of the war";
+
+            throw e;
         }
 
         System.out.println("aroundReturnBookAdvice: ");
