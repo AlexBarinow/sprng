@@ -1,5 +1,6 @@
 package com.example.sprng.aop.aspects;
 
+import com.example.sprng.aop.Book;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -54,10 +55,26 @@ public class LoggingAspect {
         System.out.println("beforeAdBookAdvice: We have just added a book");
 
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
-        System.out.println("methodSignature = "+ methodSignature);
-        System.out.println("methodSignature = "+ methodSignature.getMethod());
-        System.out.println("methodSignature = "+ methodSignature.getReturnType());
-        System.out.println("methodSignature = "+ methodSignature.getName());
+//        System.out.println("methodSignature = "+ methodSignature);
+//        System.out.println("methodSignature = "+ methodSignature.getMethod());
+//        System.out.println("methodSignature = "+ methodSignature.getReturnType());
+//        System.out.println("methodSignature = "+ methodSignature.getName());
+
+        if (methodSignature.getName().equals("addBook")) {
+            Object[] arguments = joinPoint.getArgs();
+            for (Object obj : arguments) {
+                if (obj instanceof Book) {
+                    Book myBook = (Book) obj;
+                    System.out.println("The info about the book:" +
+                            myBook.getName() + " " +
+                            "The Author " +
+                            myBook.getAuthor());
+                } else if (obj instanceof String) {
+                    System.out.println("added by: " + obj);
+                }
+            }
+
+        }
     }
 
     @Before("com.example.sprng.aop.aspects.MyPointCuts.exceptReturnMagazine()")
@@ -66,7 +83,7 @@ public class LoggingAspect {
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
         Object[] arguments = joinPoint.getArgs();
 
-        for(Object object : arguments)
+        for (Object object : arguments)
             System.out.println(object.toString());
 
         i++;

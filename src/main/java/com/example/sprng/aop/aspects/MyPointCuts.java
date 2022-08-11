@@ -6,9 +6,33 @@ import org.aspectj.lang.annotation.Pointcut;
 
 
 public class MyPointCuts {
+    /*
+    execution( modifiers-pattern?  private/public
+    return-type-pattern       void/string
+    declaring-type-pattern?    class
+        method-name-pattern(parameters-pattern)  name of the method itselfd
+        throws-pattern?  exceptions
+
+
+        parameters-pattern
+                * - one parameter of any type
+                .. - any parameters of any kind in any amount including no parameters option
+    */
+
+
+
 
     @Pointcut("execution(* get*(..))")
     public void onGet() {
+    }
+
+    @Pointcut("execution(* com.example.sprng.aop.University.*(..))")
+    public void allUniversityMethods(){
+
+    }
+    @Pointcut("execution(* com.example.sprng.aop.University.getStudents(..))")
+    public void UniversityGetStudents(){
+
     }
 
 
