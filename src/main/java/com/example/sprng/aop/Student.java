@@ -1,5 +1,7 @@
 package com.example.sprng.aop;
 
+import javax.annotation.PostConstruct;
+
 public class Student {
 
     private String nameSurname;

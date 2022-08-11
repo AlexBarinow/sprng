@@ -9,10 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Book {
 
-    public Book(){
+    public Book() {
 
     }
-
 
 
     @Value("Tom&Jerry")

@@ -50,9 +50,9 @@ public class LoggingAspect {
     }
 
 
-    @Before("com.example.sprng.aop.aspects.MyPointCuts.onAdd()")
+    @Before("com.example.sprng.aop.aspects.MyPointCuts.onAddBook()")
     public void beforeAddBookAdvice(JoinPoint joinPoint) {
-        System.out.println("beforeAdBookAdvice: We have just added a book");
+        System.out.println("beforeAddBookAdvice: We have just added a book");
 
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
 //        System.out.println("methodSignature = "+ methodSignature);

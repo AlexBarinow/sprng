@@ -9,8 +9,9 @@ public class Library extends AbstractLibrary {
         System.out.println("we pick a book" );
     }
 
-    public void returnBook() {
+    public String returnBook() {
         System.out.println("we return a book");
+        return "some book here";
     }
 
 

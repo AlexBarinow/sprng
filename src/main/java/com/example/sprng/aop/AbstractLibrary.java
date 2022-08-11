@@ -1,6 +1,5 @@
 package com.example.sprng.aop;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,9 +9,10 @@ public abstract class AbstractLibrary {
         System.out.println("-------------------------------");
     }
 
-    public void returnBook() {
+    public String returnBook() {
         System.out.println("We return a book");
         makeLine();
+        return "Lmao";
     }
 
     public void addBook(String person_name, Book book ) {

@@ -15,7 +15,7 @@ public class Test1d1 {
 //        uniLibrary.getBook();
         Book book = context.getBean("book", Book.class);
         uniLibrary.addBook("ALex", book);
-//        uniLibrary.returnBook();
+        System.out.println(uniLibrary.returnBook());
 //        uniLibrary.getMagazine();
 //        uniLibrary.returnMagazine();
 

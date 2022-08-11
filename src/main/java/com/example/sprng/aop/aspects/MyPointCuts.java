@@ -36,15 +36,15 @@ public class MyPointCuts {
     }
 
 
-    @Pointcut("execution(* add*(..))")
-    public void onAdd() {
+    @Pointcut("execution(* com.example.sprng.aop.UniLibrary.add*(..))")
+    public void onAddBook() {
     }
 
     @Pointcut("execution(* com.example.sprng.aop.UniLibrary.get*(..))")
     public void onGetFromUnilibrary() {
     }
 
-    @Pointcut("execution(* com.example.sprng.aop.UniLibrary.return*(..))")
+    @Pointcut("execution(* returnBook(..))")
     public void onReturnToUnilibrary() {
     }
 
